@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Array Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">หน้าแรก</a></li>
+          <li><a href="#"onclick="window.location.href='https://www.w3schools.com/python/exercise.asp?x=xrcise_arrays1'">แบบฝึกหัด</a></li> 
+          <li><a href="#">เรียนรู้เพิ่มเติม</a></li>
+        </ul>
+        <div class="navbar-banner"></div>
+      </nav>
+    </div>
+    </header>
+
+    <main class="container">
+      <h1>Python Array Tutorial</h1>
+
+    <section class="intro">
+      <h2>ทำความรู้จัก Array ในภาษา Python</h2>
+      <p>Array ใน Python เป็นโครงสร้างข้อมูลที่ใช้เก็บข้อมูลแบบเป็นลำดับที่มีประสิทธิภาพ 
+        ซึ่งสามารถเก็บข้อมูลที่มีประเภทเดียวกันหลายค่าได้พร้อมกัน 
+        โดยการเข้าถึงข้อมูลภายใน Array จะสามารถทำได้โดยใช้ดัชนี (index) โดยที่การนับดัชนีใน Array 
+        จะเริ่มต้นที่ 0 ซึ่งเป็นคุณสมบัติที่เป็นเอกลักษณ์ของการใช้งาน Array ใน Python</p>
+      </section>
+
+      <section class="tutorial">
+      <h2>การใช้งาน Array ในภาษา Python</h2>
+        <p>เนื่องจาก Python ไม่รองรับ built-in สำหรับ Arrays แต่สามารถใช้ Python Lists แทนได้ 
+          โดยที่ list เป็นชนิดข้อมูลที่สามารถเก็บข้อมูลหลายๆ ชนิดไว้ในที่เดียวกัน โดยไม่จำเป็นต้องจำกัดขนาดหรือประเภทข้อมูล
+          การใช้ LISTS เป็น ARRAYS เพื่อทำงานกับอาร์เรย์ใน Python จะต้องนำเข้าไลบรารีเช่น NumPy library
+        </p>
+        <h3>ตัวอย่าง กำหนดตัวแปรเพื่อเก็บข้อมูลชนิดอาเรย์ด้วยรูปแบบข้อมูลจากชุดข้อมูลชนิดลิสต์</h3>
+          <pre><code id="code1">
+  cars = [“Ford”, “Volvo”, “BMW”]
+  print(cars)
+          </code></pre>
+          <button class="copy-btn" onclick="copyCode('code1')">Copy Code</button>
+         <h3>ผลลัพธ์</h3> 
+         <pre><code>
+  [‘Ford’, ‘Volvo’, ‘BMW’]
+            </code></pre>
+        </section>
+
+        <section class="tutorial">
+        <h2>การเข้าถึงข้อมูลแต่ละตัวในอาเรย์(array)</h2>
+        <p>เราสามารถจะเข้าถึงข้อมูลแต่ละตัวในชุดข้อมูลอาเรย์โดยอ้างถึงลำดับของข้อมูล แบบเดียวกันกับชุดข้อมูลชนิดลิสต์ 
+          ซึ่งทำการระบุลำดับของข้อมูลที่ต้องการเข้าถึงไว้ภายในเครื่องหมาย[]</p>
+          <h3>ตัวอย่าง กำหนดตัวแปรเพื่อเก็บข้อมูลชนิดอาเรย์ด้วยรูปแบบข้อมูลจากชุดข้อมูลชนิดลิสต์</h3>
+          <pre><code id="code2">
+  cars = [“Ford”, “Volvo”, “BMW”]
+  cars[0] = “Toyota”
+  print(cars)
+          </code></pre>
+          <button class="copy-btn" onclick="copyCode('code2')">Copy Code</button>
+         <h3>ผลลัพธ์</h3> 
+         <pre><code>         
+  [‘Toyota’, ‘Volvo’, ‘BMW’]
+          </code></pre>
+          <p>คำอธิบาย <br> ในบรรทัดที่1 cars = ["Ford", "Volvo", "BMW"] จะสร้าง list ที่มีข้อมูล 3 ตัวคือ "Ford", "Volvo", และ "BMW". <br>
+            ในบรรทัดที่2 cars[0] = "Toyota" จะเปลี่ยนค่าในตำแหน่งที่ 0 (ตัวแรก) ของ list จาก "Ford" เป็น "Toyota". <br>
+            เมื่อใช้ print(cars) จะแสดงผลลัพธ์เป็น ['Toyota', 'Volvo', 'BMW'] ซึ่งค่าตัวแรกใน list ถูกเปลี่ยนไปเป็น "Toyota".</p>
+        </section>
+         
+        <section class="tutorial">
+            <h2>การตรวจสอบจำนวนข้อมูลในอาเรย์(array)</h2>
+            <p>เราสามารถทำการตรวจสอบจำนวนของข้อมูลที่มีอยู่ภายในชุดข้อมูลอาเรย์ ซึ่งใช้รูปแบบเดียวกับการหาจำนวนข้อมูลที่มีอยู่ในชุดข้อมูลชนิดลิสต์ โดยการใช้งานฟังก์ชัน len()</p>
+            <h3>ตัวอย่าง</h3>
+            <pre><code id="code3">
+  cars = [“Ford”, “Volvo”, “BMW”]
+  x = len(cars)
+  print(x)
+            </code></pre>
+            <button class="copy-btn" onclick="copyCode('code3')">Copy Code</button>
+           <h3>ผลลัพธ์</h3> 
+           <pre><code>                   
+  3
+            </code></pre>
+            <h2>Looping Array Elements</h2>
+            <p>สามารถใช้การ for in loop เพื่อวนองค์ประกอบทั้งหมดของอาร์เรย์</p>
+            <h3>ตัวอย่าง ปริ้นแต่ละรายการในอาร์เรย์รถยนต์</h3>
+            <pre><code id="code4">
+  cars = ["Ford", "Volvo", "BMW"]
+  for x in cars:
+  print(x)
+            </code></pre>
+            <button class="copy-btn" onclick="copyCode('code4')">Copy Code</button>
+            <h3>ผลลัพธ์</h3>
+            <pre><code>                   
+  Ford
+  Volvo
+  BMW
+            </code></pre>
+            </section>
+
+            <section class="tutorial">
+            <h2>การเพิ่มข้อมูลลงไปในชุดข้อมูลอาเรย์(array)</h2>
+            <p>เราสามารถใช้ฟังก์ชัน append() ในการเพิ่มข้อมูลใหม่ลงไปในชุดข้อมูลอาเรย์ ซึ่งจะเพิ่มเข้าไปหลังข้อมูลลำดับสุดท้ายที่มีอยู่ในอาเรย์</p>
+            <h3>ตัวอย่าง</h3>
+            <pre><code id="code5">
+  cars = [“Ford”, “Volvo”, “BMW”]
+  cars.append(“Honda”)
+  print(cars)
+            </code></pre>
+            <button class="copy-btn" onclick="copyCode('code5')">Copy Code</button>
+            <h3>ผลลัพธ์</h3>
+            <pre><code>              
+  [‘Toyota’, ‘Volvo’, ‘BMW’, ‘Honda’]
+            </code></pre>
+            </section>
+
+            <section class="tutorial">
+            <h2>การลบข้อมูลออกจากชุดข้อมูลอาเรย์(array)</h2>
+            <p>เราสามารถลบข้อมูลออกจากชุดข้อมูลอาเรย์โดยใช้คีย์เวิร์ด del หรืออาจจะลบข้อมูลโดยใช้ฟังก์ชัน remove() และ pop() ในการลบข้อมูลออก <br>
+              - การลบข้อมูลออกจากชุดข้อมูลอาเรย์(array) โดยใช้คีย์เวิร์ด del () <br>
+              - การลบข้อมูลออกจากชุดข้อมูลอาเรย์(array) โดยใช้ฟังก์ชัน remove()</p>
+              <h3>ตัวอย่าง remove()</h3>
+              <pre><code id="code6"></code>
+  cars = [“Ford”, “Volvo”, “BMW”]
+  cars.remove(“Volvo”)
+  print(cars)
+              </code></pre>
+              <button class="copy-btn" onclick="copyCode('code6')">Copy Code</button>
+              <h3>ผลลัพธ์</h3>
+              <pre><code>
+  [‘Ford’, ‘BMW’]
+              </code></pre>
+              <h3>ตัวอย่าง pop()</h3>
+              <pre><code id="code7">
+  cars = ['Ford', 'Volvo', ‘BMW’]
+  cars.pop(1)
+  print(cars)
+              </code></pre>
+              <button class="copy-btn" onclick="copyCode('code7')">Copy Code</button>
+              <h3>ผลลัพธ์</h3>
+              <pre><code>
+  [‘Ford’, ‘BMW’]
+              </code></pre>
+              </section>
+
+              <section id="exercise-section" class="tutorial" style="display:none;">
+                <h2>แบบฝึกหัดการใช้งาน Array</h2>
+                <p>ในส่วนนี้จะมีแบบฝึกหัดให้คุณลองทำความเข้าใจเกี่ยวกับการใช้ Array ในภาษา Python...</p>
+                <p> แบบฝึกหัดที่ 1 </p>
+                <p>1. สร้าง List ที่เก็บชื่อเมือง 3 เมือง (เช่น "Bangkok", "Chiang Mai", "Phuket") และพิมพ์ออกมาทั้งหมด <br>
+                2. เข้าถึงข้อมูลเมืองที่ 2 (เมืองเชียงใหม่) และพิมพ์ออกมา</p>
+              </section>
+              </main>
+
+
+  <main class="container">
+    <!-- เนื้อหาต่างๆ ตามเดิม -->
+  </main> 
+
+  <script>
+    function copyCode(id) {
+      var codeBlock = document.getElementById(id);  // รับ ID ของโค้ดที่ถูกกด
+      var range = document.createRange();
+      range.selectNode(codeBlock);
+      window.getSelection().removeAllRanges();  // ลบการเลือกทั้งหมดก่อนหน้า
+      window.getSelection().addRange(range);  // เลือกเนื้อหาใน code block
+      try {
+        document.execCommand('copy');  // คัดลอกไปยังคลิปบอร์ด
+        alert("โค้ดถูกคัดลอกไปยังคลิปบอร์ดแล้ว!");
+      } catch (err) {
+        alert("ไม่สามารถคัดลอกโค้ดได้");
+      }
+      window.getSelection().removeAllRanges();  // ล้างการเลือก
+    }
+
+    function showExercise() {
+      var exerciseSection = document.getElementById('exercise-section');
+      // เปลี่ยนแสดงส่วนแบบฝึกหัด
+      if (exerciseSection.style.display === "none") {
+        exerciseSection.style.display = "block";
+      } else {
+        exerciseSection.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
